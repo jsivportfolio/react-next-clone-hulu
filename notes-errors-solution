@@ -1,0 +1,55 @@
+Module not found: Can't resolve '../styles/Home.module.css'
+    - remove this line import styles from '../styles/Home.module.css'
+
+ReferenceError: styles is not defined
+    - remove this line className={styles.container}
+
+ReferenceError: styles is not defined
+    - go to pages > api > index.js
+        - remove main tag and contents
+        - remove footer tag and contents
+
+wait  - compiling...
+event - compiled successfully       
+Errors currently resolved. 
+
+ReferenceError: Header is not defined
+    - index.js > import Header from '../components/Header';
+
+TypeError: Failed to construct 'Image': Please use the 'new' operator, this DOM object constructor cannot be called as a function.
+    - import Image from 'next/image';
+    - Error: Image is missing required "src" property. Make sure you pass "src" in props to the `next/image` component. Received: {}
+        - src='https://links.papareact.com/ua6'
+        - Error: Image with src "https://links.papareact.com/ua6" must use "width" and "height" properties or "layout='fill'" property.
+            - width={200} height={100}
+            - Error: Invalid src prop (https://links.papareact.com/ua6) on `next/image`, hostname "links.papareact.com" is not configured under images in your `next.config.js`
+            - See more info: https://nextjs.org/docs/messages/next-image-unconfigured-host
+                - DEV needs to permit usage of image src
+                - go to package.json > next.config.js
+                    - add images: {domains: ['https://links.papareact.com/ua6', image.tmdb.org]}
+                    - the Error will still appear
+                    - stop the server and restart to resolve Server Error
+                    - if Server Error appears, then check to see if VS Code is not registering the change in history (make sure the working tree is up to date)
+
+ReferenceError: key is not defined
+    - <div>{Object.entries(requests).map(([key, { title, url }]) => ( <h2 key={key}>{title}</h2> ))}</div>
+
+Syntax error: JSX attributes must only be assigned a non-empty expression
+    - onClick={() => router.push(`/?genre=${key}`)}
+
+FetchError: request to https://image.tmbd.org/t/p/original//nVKRspU9SQEs2gNrms8cDKsI4vx.jpg failed, reason: connect ECONNREFUSED 67.227.226.240:443
+    at ClientRequest.<anonymous> (/Users/JServosIV/Desktop/React/react-next-clone-hulu/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (node:events:394:28)
+    at TLSSocket.socketErrorListener (node:_http_client:447:9)
+    at TLSSocket.emit (node:events:394:28)
+    at emitErrorNT (node:internal/streams/destroy:193:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:158:3)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21) {
+  type: 'system',
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED'
+}
+
+        
+
+

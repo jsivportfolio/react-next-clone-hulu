@@ -1,0 +1,75 @@
+- remove the package-lock.json
+- remove the Home.module.css
+- terminal > yarn
+
+TailwindCSS
+    - build modern websites without leaving the html
+    - npm install tailwindcss
+    - click get started > installation > select framework (Next.js)
+        - # If you're on Next.js v10 or newer
+        - npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
+        - yarn add -D tailwindcss@latest postcss@latest autoprefixer@latest
+    - Create configuration files
+        - npx tailwindcss init -p
+            - Created Tailwind CSS config file: tailwind.config.js
+            - Created PostCSS config file: postcss.config.js
+    - Configure Tailwind to remove unused styles in production
+        - purge allows tailwind to clean up the css that we do not use
+            - tailwind.config.js
+                - purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+                - mode: mode: 'jit',
+                    - enables new features of latest features for tailwindcss
+    - Include Tailwind in your CSS
+        - ./styles/globals.css
+            - @tailwind base;
+            - @tailwind components;
+            - @tailwind utilities;
+    - TailwindCSS should be set up correctly now
+    - yarn run dev
+
+    - display: 'flex'
+    - height: className='h-8'
+    - width: 'w-12'
+    - margin-bottom: 'mb-1'
+    - tracking-widest: spaces the text out
+    - opacity: 'opacity-0'
+    - group elements together for same effect: 'group'
+    - hover: 'hover:opacity-100'
+    - align-items: 'items-center'
+    - cursor: 'cursor-pointer'
+
+PLUGINS
+    - hide scroll bar
+        - npm install tailwind-scrollbar-hide
+        - yarn add tailwind-scrollbar-hide
+        - in tailwind.config.js add the following
+            - plugins: [require('tailwind-scrollbar-hide')],
+
+heroicons
+    - got to Documentation 
+        - intall heroicons for react
+            - npm install @heroicons/react
+            - yarn add @heroicons/react
+
+
+    - TailwindCSS eliminates default styling
+    - Headless UI
+
+- go to pages > api > index.js > clean the default code
+    - Page Routing is supported out of the box in Nextjs
+
+<Image></Image>
+    - Nextjs tag is by default lazy loaded
+    - lazy loaded only needs to load what the end use client needs at the time
+
+Props: aka properties
+    - pass in props to a component
+    - allow us to re-use a component 
+    - Components that are passed into Components as props use the same Component syntac
+        - Icon Icon={}
+            - pull in icons by inserting into the brackets
+                - Icon={HomeIcon}
+            - add import statements for icons 
+                - import {} from @heroicons/react/solid
+                - import {} from @heroicons/react/outline
+

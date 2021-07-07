@@ -1,0 +1,60 @@
+- REDUX IS NOT ALWAYS NEEDED
+- BUILD AN APP CORRECTLY AND LIGHTLY
+- RENDER WHAT YOU NEED TO RENDER, LESS IS MORE IN SOME CASES
+- TECHNOLOGY THAT TO CREATE AN APPLICATION THAT IS SMOOTH, FAST, RELIABLE, AND GOOGLE SEO FRIENDLY
+
+TYPICAL REACT DEPLOY 
+    - deploy the entire react app bundle to the website
+    - JavaScript is loaded in the browser
+
+HOW NEXT.JS works
+    - SSR
+    - Server builds the page and files, renders on the server before it reaches the user
+    - final rendered page is sent as a prop
+    - better SEO
+    - special function that tells Nextjs to SSR the page 
+    - SPA
+    - get context, such as what url they came in with, we need this to know what we fetch    
+
+pages folder
+    - is how page routing works within Next.js
+
+pages > api > index.js
+    - Head Component
+        - change title
+
+APP COMPONENTS
+
+- create components folder
+
+    - HEADER COMPONENT
+        - Header.js
+            - HeaderItem.js
+                - Icon used from heroicons 
+                    - heroicons work natively with TailwindCSS
+                    - use SVG: Scalable Vector Graphics 
+
+    - NAVBAR
+        - loop through each request in requests.js
+        - get the title of each
+
+    - RESULTS
+
+utils folder
+    - requests.js
+        - create API_KEY
+            - this will pull from the environment variable 
+            - these are private variables
+            - export default
+
+.env.local file 
+    - contains API_KEY relevant to local environment
+    - using TMBD 
+        - create account
+        - sign in
+        - profile > settings > API 
+        - API Key (v3 auth)
+            - copy the key 
+            - pase the key in the .env.local file
+            - ctrl + c
+            - yarn run dev

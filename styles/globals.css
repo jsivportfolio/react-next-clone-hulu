@@ -1,0 +1,14 @@
+/* remove template starter code */
+/* pase the code from notes-react-next-clone */
+/* this allows us to use teh tailwind css globally */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* apply gobal styles */
+/* jit compiler allows us to bypass default to set custom styles */
+@layer base {
+  body {
+    @apply bg-[#06202A] text-gray-300;
+  }
+}
